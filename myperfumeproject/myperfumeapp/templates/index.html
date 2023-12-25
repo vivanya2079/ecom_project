@@ -1,0 +1,818 @@
+{% load static %}
+{% block content %}
+{% include 'header.html'%}
+<style>
+
+{% comment %} hero style {% endcomment %}
+.hero-bg {
+    background-image: url({% static './images/bella_2.jpg' %});	
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+  }
+  
+  .hero-text {
+	display: table;
+	height: 100%;
+  }
+  
+  .hero-text-tablecell {
+	display: table-cell;
+  }
+  
+  .hero-area {
+	height: 100%;
+	position: relative;
+	z-index: 1;
+  }
+  
+  html, body {
+	height: 100%;
+  }
+  
+  .hero-area:after {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	content: "";
+	background-color: #07212e;
+	z-index: -1;
+	opacity: 0.6;
+  }
+  .hero-text h1 {
+	font-size: 60px;
+	font-weight: 500;
+	line-height: 1.3;
+	color: #fff;
+	text-align:initial; /* Add this line */
+  }
+  
+  .hero-area div {
+	height: 100%;
+  }
+  
+  .hero-area div.hero-text {
+	height: 100%;
+	width: 100%;
+  }
+  
+  .hero-area div.hero-text-tablecell {
+	height: auto;
+	vertical-align: middle;
+  }
+  
+  .hero-area div.hero-text-tablecell div {
+	height: auto;
+	vertical-align: middle;
+  }
+  
+  .hero-btns {
+	margin-top: 35px;
+  
+  }
+  
+  .hero-btns a.bordered-btn {
+	margin-left: 15px;
+  }
+  
+  .hero-area div.hero-form {
+	background-color: #fff;
+	text-align: left;
+	width: 380px;
+	margin: 0 auto;
+	margin-right: 0;
+	border-radius: 5px;
+	-webkit-box-shadow: 0 0 15px #2d2d2d;
+	box-shadow: 0 0 15px #2d2d2d;
+	position: absolute;
+	right: 10px;
+	bottom: -15%;
+	height: 600px;
+  }
+  
+  input[type="submit"] {
+	background-color: #fff;
+	color: #051922;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 15px;
+	border: none !important;
+	cursor: pointer;
+	padding: 15px 25px;
+	border-radius: 3px;
+  }
+  
+  
+  .homepage-slider {
+	height: 100%;
+  }
+  
+  .homepage-slider div {
+	height: 100%;
+  }
+  
+  .homepage-slider div.hero-text {
+	display: table;
+	width: 100%;
+  }
+  
+  .homepage-slider div.hero-text-tablecell {
+	height: auto;
+	vertical-align: middle;
+	display: table-cell;
+  }
+  
+  .homepage-slider div.hero-text-tablecell div {
+	height: auto;
+  }
+  
+  .single-homepage-slider {
+	background-size: cover;
+	background-position: center;
+	background-color: #020C0E;
+	position: relative;
+	z-index: 1;
+  }
+  
+  .single-homepage-slider:after {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #051922;
+	content: "";
+	z-index: -1;
+	opacity: 0.7;
+  }
+  
+  div.owl-controls, .owl-controls div {
+	height: auto;
+	top: 50%;
+	color: #000000;
+	font-size: 48px;
+  }
+  
+  .homepage-slider {
+	position: relative;
+  }
+  
+  .owl-prev {
+	position: absolute;
+	left: 60px;
+	margin-top: -30px;
+  }
+  
+  .owl-next {
+	position: absolute;
+	right: 60px;
+	margin-top: -30px;
+  }
+  {% comment %} ///hero stylee============ {% endcomment %}
+
+{% comment %} # Shop Banner Styles {% endcomment %}
+    .shop-banner {
+		position: relative;
+		background-color: #f5f5f5;
+		background-image: url("{% static './images/off1.jpg' %}");
+		background-size: cover;
+		padding: 110px 0px 115px;
+	  }
+	  
+	  .shop-banner h3 {
+		position: relative;
+		font-size: 50px;
+		line-height: 1.2em;
+		margin-bottom: 0px;
+	  }
+	  
+	  .shop-banner .sale-percent {
+		position: relative;
+		font-size: 60px;
+		font-weight: 700;
+		color: #000;
+	  }
+	  
+	  .shop-banner .sale-percent span {
+		position: relative;
+		font-size: 24px;
+		line-height: 1.1em;
+		color: #000;
+		font-weight: 400;
+		text-align: center;
+		margin-right: 10px;
+		display: inline-block;
+	  }
+	  {% comment %} ------------------------------------------------- {% endcomment %}
+
+
+{% comment %} Hover Styles {% endcomment %}
+a.navbar-brand {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+a.navbar-brand:hover {
+  opacity: 0.7;
+}
+
+a.boxed-btn {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+a.boxed-btn:hover {
+  background-color: #051922;
+  color: #000000;
+}
+
+a.bordered-btn {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+a.bordered-btn:hover {
+  background-color: #000000;
+  color: #fff;
+}
+
+ul.sub-menu a {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+ul.sub-menu li:hover a {
+  color: #000000;
+}
+
+.single-tof-box {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.single-tof-box:hover {
+  -webkit-box-shadow: 0 0 80px #353535;
+  box-shadow: 0 0 80px #353535;
+}
+
+a.tof-btn {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+a.tof-btn i {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+a.tof-btn:hover {
+  color: #000000;
+}
+
+a.tof-btn:hover i {
+  margin-left: 10px;
+}
+
+.single-logo-item {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.single-logo-item:hover {
+  opacity: 0.7;
+}
+
+.footer-box.pages ul li a {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.footer-box.pages ul li:hover a {
+  color: #000000;
+}
+
+.footer-box.subscribe form button {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.footer-box.subscribe form button:hover {
+  background-color: #000000;
+  color: #051922;
+}
+
+.social-icons ul li:hover a {
+  color: #000000;
+}
+
+.social-icons ul li a {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+ul.social-link-team li a {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+ul.social-link-team li a:hover {
+  background-color: #051922;
+  color: #000000;
+}
+
+.counter-box {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.counter-box:hover {
+  -webkit-box-shadow: 0 0 80px #6f6f6f;
+  box-shadow: 0 0 80px #6f6f6f;
+}
+
+input[type="submit"] {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  border-radius: 50px !important;
+}
+
+input[type="submit"]:hover {
+  background-color: #051922;
+  color: #000000;
+}
+
+div.owl-controls, .owl-controls div {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+div.owl-controls div.owl-nav div:hover {
+  opacity: 0.7;
+}
+
+.pagination-wrap ul li a {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.pagination-wrap ul li:hover a {
+  background-color: #000000;
+}
+
+.icons a i {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.icons a:hover i {
+  color: #000000;
+}
+
+.tof-text a.tof-btn {
+  margin-top: 15px;
+  display: inline-block;
+}
+
+.single-pricing-table {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.single-pricing-table:hover {
+  -webkit-box-shadow: 0 0 20px #ddd;
+  box-shadow: 0 0 20px #ddd;
+}
+
+.product-image img {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.product-image img:hover {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+a.cart-btn {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+a.cart-btn:hover {
+  background-color: #dddddd;
+  color: #000000;
+}
+
+.recent-posts ul li {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.recent-posts ul li:hover {
+  opacity: 0.7;
+}
+
+ul.sub-menu li a {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+ul.sub-menu li:hover a {
+  color: #000000 !important;
+}
+
+.sidebar-section ul li a {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.sidebar-section ul li a:hover {
+  opacity: 0.7;
+}
+
+.comment-text-body h4 a {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.comment-text-body h4 a:hover {
+  color: #000000;
+}
+
+ul.product-share li a {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+ul.product-share li:hover a {
+  color: #000000;
+}
+
+.service-menu ul li a {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.service-menu ul li a.active {
+  font-weight: 600;
+  color: #ffe200;
+}
+
+.service-menu ul li a:hover {
+  color: #ffe200;
+}
+
+.single-product-item {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.single-product-item:hover {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.search-bar-tablecell button[type=submit] {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.search-bar-tablecell button[type=submit]:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+span.close-btn {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+span.close-btn:hover {
+  color: #fff;
+}
+
+a.mobile-show.search-bar-icon {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+a.mobile-show.search-bar-icon:hover {
+  color: #000000;
+}
+{% comment %} ///hover style============================================= {% endcomment %}
+
+	</style>
+	<!-- search area -->
+
+	<div class="search-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<span class="close-btn"><i class="fas fa-window-close"></i></span>
+					<div class="search-bar">
+						<div class="search-bar-tablecell">
+							<h3>Search For:</h3>
+							<input type="text" placeholder="Keywords">
+							<button type="submit">Search <i class="fas fa-search"></i></button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end search area -->
+
+	<!-- hero area -->
+	<div class="hero-area hero-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-9 offset-lg-2 text-center">
+					<div class="hero-text">
+						<div class="hero-text-tablecell">
+							<h1>Spread the Love & Fragrance</h1>
+							<div class="hero-btns">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end hero area -->
+
+	<!-- features list section -->
+	<div class="list-section pt-80 pb-80">
+		<div class="container">
+
+			<div class="row">
+				<div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+					<div class="list-box d-flex align-items-center">
+						<div class="list-icon">
+							<i class="fas fa-shipping-fast"></i>
+						</div>
+						<div class="content">
+							<h3>Free Shipping</h3>
+							<p>When order over &#8377;75</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+					<div class="list-box d-flex align-items-center">
+						<div class="list-icon">
+							<i class="fas fa-phone-volume"></i>
+						</div>
+						<div class="content">
+							<h3>24/7 Support</h3>
+							<p>Get support all day</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6">
+					<div class="list-box d-flex justify-content-start align-items-center">
+						<div class="list-icon">
+							<i class="fas fa-sync"></i>
+						</div>
+						<div class="content">
+							<h3>Refund</h3>
+							<p>Get refund within 3 days!</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<!-- end features list section -->
+
+	<!-- product section -->
+	<div class="product-section mt-150 mb-150">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<div class="section-title">	
+						<h3><span class="orange-text">Best</span> Sellers</h3>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-lg-4 col-md-6 text-center">
+					<div class="single-product-item">
+						<div class="product-image">
+							<a href="single-product.html"><img src="{% static 'images/womens/img1.webp' %}" alt=""></a>
+						</div>
+						<h3>Luxury Perfume Gift Set For Women</h3>
+						<p class="product-price"><span>20mls x 4</span> &#8377;565 </p>
+						<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 text-center">
+					<div class="single-product-item">
+						<div class="product-image">
+							<a href="single-product.html"><img src="{% static 'images/womens/img3.webp' %}" alt=""></a>
+						</div>
+						<h3>Hot Mess Perfume for Women </h3>
+						<p class="product-price"><span>100 ml</span> &#8377;849 </p>
+						<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0 text-center">
+					<div class="single-product-item">
+						<div class="product-image">
+							<a href="single-product.html"><img src="{% static 'images/mens/img1.webp' %}" alt=""></a>
+						</div>
+						<h3>Luxury Perfume Gift Set For Men</h3>
+						<p class="product-price"><span>20ml x 4</span> &#8377;845 </p>
+						<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end product section -->
+
+	<!-- cart banner section -->
+	<section class="cart-banner pt-100 pb-100">
+    	<div class="container">
+        	<div class="row clearfix">
+            	<!--Image Column-->
+            	<div class="image-column col-lg-6">
+                	<div class="image">
+                    	<div class="price-box">
+                        	<div class="inner-price">
+                                <span class="price">
+                                    <strong>30%</strong> <br> off
+                                </span>
+                            </div>
+                        </div>
+                    	<img src="{% static 'images/bella9.webp' %}" width="550" height="500" alt="">
+                    </div>
+                </div>
+                <!--Content Column-->
+                <div class="content-column col-lg-6">
+					<h3><span class="orange-text">Deal</span> of the month</h3>
+                    <h4>CEO Man Luxury Perfume</h4>
+                    <div class="text">Bring out your inner CEO to work 💼 everyday with the Bella Vita Luxury CEO Man Luxury Perfume.</div>
+                    <!--Countdown Timer-->
+                    <div class="time-counter"><div class="time-countdown clearfix" data-countdown="2020/2/01"><div class="counter-column"><div class="inner"><span class="count">00</span>Days</div></div> <div class="counter-column"><div class="inner"><span class="count">00</span>Hours</div></div>  <div class="counter-column"><div class="inner"><span class="count">00</span>Mins</div></div>  <div class="counter-column"><div class="inner"><span class="count">00</span>Secs</div></div></div></div>
+                	<a href="cart.html" class="cart-btn mt-3"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end cart banner section -->
+
+	
+	<!-- shop banner -->
+	<section class="shop-banner">
+    	<div class="container">
+        	<h3>Buy Any<br><span class="orange-text"></span></h3>
+            <div class="sale-percent"><span>3 <br> for</span>1298 <span>only</span></div>
+            <a href="shop.html" class="cart-btn btn-lg">Shop Now</a>
+        </div>
+    </section>
+	<!-- end shop banner -->
+
+<!-- end cart banner section -->
+
+	<!-- testimonail-section -->
+	<div class="testimonail-section mt-150 mb-150">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-10 offset-lg-1 text-center">
+					<div class="testimonial-sliders">
+						<div class="single-testimonial-slider">
+							<div class="client-avater">
+								<img src="{% static 'images/avaters/avatar1.png' %}" alt="">
+							</div>
+							<div class="client-meta">
+								<h3>Saira Hakim <span>Local shop owner</span></h3>
+								<p class="testimonial-body">
+									" Sed ut perspiciatis unde omnis iste natus error veritatis et  quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium "
+								</p>
+								<div class="last-icon">
+									<i class="fas fa-quote-right"></i>
+								</div>
+							</div>
+						</div>
+						<div class="single-testimonial-slider">
+							<div class="client-avater">
+								<img src="{% static 'images/avaters/avatar2.png' %}" alt="">
+							</div>
+							<div class="client-meta">
+								<h3>David Niph <span>Local shop owner</span></h3>
+								<p class="testimonial-body">
+									" Sed ut perspiciatis unde omnis iste natus error veritatis et  quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium "
+								</p>
+								<div class="last-icon">
+									<i class="fas fa-quote-right"></i>
+								</div>
+							</div>
+						</div>
+						<div class="single-testimonial-slider">
+							<div class="client-avater">
+								<img src="{% static 'images/avaters/avatar3.png' %}" alt="">
+							</div>
+							<div class="client-meta">
+								<h3>Jacob Sikim <span>Local shop owner</span></h3>
+								<p class="testimonial-body">
+									" Sed ut perspiciatis unde omnis iste natus error veritatis et  quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium "
+								</p>
+								<div class="last-icon">
+									<i class="fas fa-quote-right"></i>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end testimonail-section -->
+    
+	<!-- logo carousel -->
+	<div class="logo-carousel-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="logo-carousel-inner">
+						<div class="single-logo-item">
+							<img src="{% static 'images/logo1.avif' %}" alt="">
+						</div>
+						<div class="single-logo-item">
+							<img src="{% static 'images/logo2.avif' %}" alt="">
+						</div>
+						<div class="single-logo-item">
+							<img src="{% static 'images/logo3.avif' %}" alt="">
+						</div>
+						<div class="single-logo-item">
+							<img src="{% static 'images/logo4.avif' %}" alt="">
+						</div>
+						<div class="single-logo-item">
+							<img src="{% static 'images/logo5.avif' %}" alt="">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end logo carousel -->
+
+	<!-- jquery -->
+	<script src="{% static 'js/jquery-1.11.3.min.js' %}"></script>
+	<!-- bootstrap -->
+	<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+	<!-- count down -->
+	<script src="{% static 'js/jquery.countdown.js' %}"></script>
+	<!-- isotope -->
+	<script src="{% static 'js/jquery.isotope-3.0.6.min.js' %}"></script>
+	<!-- waypoints -->
+	<script src="{% static 'js/waypoints.js' %}"></script>
+	<!-- owl carousel -->
+	<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+	<!-- magnific popup -->
+	<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+	<!-- mean menu -->
+	<script src="{% static 'js/jquery.meanmenu.min.js' %}"></script>
+	<!-- sticker js -->
+	<script src="{% static 'js/sticker.js' %}"></script>
+	<!-- main js -->
+	<script src="{% static 'js/main.js' %}"></script>
+
+</body>
+</html>
+
+{% endblock %}
+{% include 'footer.html'%}

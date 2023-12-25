@@ -1,0 +1,161 @@
+{% load static %}
+{% block content %}
+{% include 'header.html'%}
+<style>
+	body, h1, h2, p, label, button {
+		margin: 0;
+		padding: 0;
+	  }
+	  
+	  body {
+		font-family: Arial, sans-serif;
+		background-color: #f4f4f4;
+	  }
+	  
+	  .payment-container {
+		max-width: 600px;
+		margin: 50px auto;
+		background-color: #fff;
+		padding: 20px;
+		border-radius: 8px;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	  }
+	  
+	  h1 {
+		font-size: 24px;
+		color: #333;
+		margin-bottom: 20px;
+	  }
+	  
+	  .payment-section {
+		margin-bottom: 20px;
+	  }
+	  
+	  label {
+		display: block;
+		font-size: 16px;
+		margin-bottom: 5px;
+		color: #333;
+	  }
+	  
+	  input,
+	  textarea {
+		width: 100%;
+		padding: 10px;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		box-sizing: border-box;
+	  }
+	  
+	  button {
+		background-color: #4caf50;
+		color: #fff;
+		padding: 10px 20px;
+		border: none;
+		border-radius: 4px;
+		cursor: pointer;
+		transition: background-color 0.3s ease-in-out;
+	  }
+	  
+	  button:hover {
+		background-color: #45a049;
+	  }
+	  
+	  /* Responsive styles */
+	  @media (max-width: 768px) {
+		.payment-container {
+			max-width: 90%;
+		}
+	  }
+	</style>
+    <div class="payment-container">
+        <h1>Payment Details</h1>
+        <form action="process_payment.php" method="post">
+            <!-- Payment Information -->
+            <div class="payment-section">
+                <label for="card-number">Card Number:</label>
+                <input type="text" id="card-number" name="card-number" placeholder="Enter your card number" required>
+            </div>
+
+            <div class="payment-section">
+                <label for="expiry-date">Expiry Date:</label>
+                <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/YY" required>
+            </div>
+
+            <div class="payment-section">
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" name="cvv" placeholder="Enter CVV" required>
+            </div>
+
+            <!-- Billing Information -->
+            <h2>Billing Information</h2>
+            <div class="payment-section">
+                <label for="full-name">Full Name:</label>
+                <input type="text" id="full-name" name="full-name" placeholder="Enter your full name" required>
+            </div>
+
+            <div class="payment-section">
+                <label for="address">Address:</label>
+                <textarea id="address" name="address" placeholder="Enter your billing address" required></textarea>
+            </div>
+
+            <div class="payment-section">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="payment-section">
+                <button type="submit">Submit Payment</button>
+            </div>
+        </form>
+    </div>
+    	
+	<!-- copyright -->
+	<div class="copyright">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-md-12">
+				</div>
+				<div class="col-lg-6 text-right col-md-12">
+					<div class="social-icons">
+						<ul>
+							<li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+							<li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+							<li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+							<li><a href="#" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+							<li><a href="#" target="_blank"><i class="fab fa-dribbble"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end copyright -->
+	
+	<!-- jquery -->
+	<script src="{% static 'js/jquery-1.11.3.min.js' %}"></script>
+	<!-- bootstrap -->
+	<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+	<!-- count down -->
+	<script src="{% static 'js/jquery.countdown.js' %}"></script>
+	<!-- isotope -->
+	<script src="{% static 'js/jquery.isotope-3.0.6.min.js' %}"></script>
+	<!-- waypoints -->
+	<script src="{% static 'js/waypoints.js' %}"></script>
+	<!-- owl carousel -->
+	<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+	<!-- magnific popup -->
+	<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+	<!-- mean menu -->
+	<script src="{% static 'js/jquery.meanmenu.min.js' %}"></script>
+	<!-- sticker js -->
+	<script src="{% static 'js/sticker.js' %}"></script>
+	<!-- main js -->
+	<script src="{% static 'js/main.js' %}"></script>
+
+</body>
+</html>
+
+{% endblock %}
+{% include 'footer.html'%}

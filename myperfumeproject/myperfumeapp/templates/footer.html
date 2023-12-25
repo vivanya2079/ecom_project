@@ -1,0 +1,211 @@
+{% load static %}
+{% block content %}
+<style>
+	{% comment %} Footer Styles {% endcomment %}
+.single-logo-item img {
+	max-width: 180px;
+	margin: 0 auto;
+  }
+  
+  .logo-carousel-section {
+	background-color: #FFFFFF;
+	padding: 50px 0;
+  }
+  
+  .footer-area {
+	background-color: #051922;
+	color: #fff;
+	padding: 150px 0;
+  }
+  
+  h2.widget-title {
+	font-size: 24px;
+	font-weight: 500;
+	position: relative;
+	padding-bottom: 20px;
+	color: #fff;
+  }
+  
+  h2.widget-title:after {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 20px;
+	height: 2px;
+	background-color: #000000;
+	content: "";
+  }
+  
+  .footer-box p {
+	color: #fff;
+	opacity: 0.7;
+	line-height: 1.8;
+  }
+  
+  .footer-box ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+  }
+  
+  .footer-box ul li {
+	opacity: 0.7;
+	margin-bottom: 10px;
+	line-height: 1.8;
+  }
+  
+  .footer-box ul li:last-child {
+	margin-bottom: 0;
+  }
+  
+  .footer-box.subscribe form input[type=email] {
+	border: none;
+	background-color: #012738;
+	width: 78%;
+	padding: 15px;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	color: #fff;
+  }
+  
+  .footer-box.subscribe form button {
+	width: 20%;
+	border: none;
+	background-color: #012738;
+	color: #000000;
+	padding: 14px 0;
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+	cursor: pointer;
+  }
+  
+  .footer-box.subscribe form button:focus {
+	outline: none;
+  }
+  
+  .copyright {
+	background-color: #051922;
+	border-top: 1px solid #232a35;
+  }
+  
+  .copyright p {
+	margin: 0;
+	color: #fff;
+	opacity: 0.7;
+	padding: 16px 0;
+	font-size: 15px;
+  }
+  
+  .copyright a {
+	color: #000000;
+	font-weight: 700;
+  }
+  
+  .copyright a:hover {
+	color: #000000;
+  }
+  
+  .social-icons ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+  }
+  
+  .social-icons ul li {
+	display: inline-block;
+  }
+  
+  .social-icons ul li a {
+	font-size: 16px;
+	color: #fff;
+	opacity: 0.7;
+	padding: 16px 10px;
+	display: block;
+  }
+  
+  .footer-box ul li a {
+	color: #fff;
+  }
+  
+  .footer-box.pages ul li {
+	position: relative;
+	padding-left: 20px;
+  }
+  
+  .footer-box.pages ul li:before {
+	position: absolute;
+	left: 0;
+	top: 0;
+	content: "\f105";
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+	color: #000000;
+  }
+  
+  {% comment %} ////footer================================  {% endcomment %}
+</style>
+	<div class="footer-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3 col-md-6">
+					<div class="footer-box about-widget">
+						<h2 class="widget-title">About us</h2>
+						<p>Founded in 2018, BellaVita is a fragrance that are focused on providing quality products at value-driven prices.</p>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<div class="footer-box get-in-touch">
+						<h2 class="widget-title">Contact Us</h2>
+						<ul>
+							<li>Office Location: Plot no. 417, Udyog Vihar Phase III, Gurgaon, Haryana, India</li>
+							<li>support@bellavita.com</li>
+							<li>+00 111 222 3333</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<div class="footer-box pages">
+						<h2 class="widget-title">Pages</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="about.html">About</a></li>
+							<li><a href="shop.html">Perfumes</a></li>
+							<li><a href="contact.html">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<div class="footer-box subscribe">
+						<h2 class="widget-title">Subscribe</h2>
+						<p>Subscribe to our mailing list to get the latest updates.</p>
+						<form action="index.html">
+							<input type="email" placeholder="Email">
+							<button type="submit"><i class="fas fa-paper-plane"></i></button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+		<!-- copyright -->
+		<div class="copyright">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-6 col-md-12">
+					</div>
+					<div class="col-lg-6 text-right col-md-12">
+						<div class="social-icons">
+							<ul>
+								<li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+								<li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+								<li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+								<li><a href="#" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+								<li><a href="#" target="_blank"><i class="fab fa-dribbble"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end copyright -->
+{% endblock %}

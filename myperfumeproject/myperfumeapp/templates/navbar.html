@@ -1,0 +1,40 @@
+<nav class="main-menu">
+    <ul>
+        <li class="current-list-item"><a href="{% url 'index' %}">Home</a></li>
+        <a href="{% url 'about' %}">About</a>
+        <li><a href="{% url 'shop' %}">Perfumes</a>
+            <ul class="sub-menu">
+                <li><a href="{% url 'mens' %}">Mens</a></li>
+                <li><a href="{% url 'womens' %}">Womens</a></li>
+            </ul>
+        </li>
+        <li><a href="{% url 'contact' %}">Contact</a></li>
+        <li><a href="{% url 'shop' %}">Shop</a>
+            <ul class="sub-menu">
+                <li><a href="{% url 'shop' %}">Shop</a></li>
+                <li><a href="checkout">Check Out</a></li>
+                <li><a href="single_product">Single Product</a></li>
+                <li><a href="cart">Cart</a></li>
+            </ul>
+        </li>
+        <li><a href="{% url 'order' %}">Order</a>
+            <ul class="sub-menu">
+                <li><a href="{% url 'order' %}">Order</a></li>
+            </ul>
+        </li>
+        <li><a href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a>
+            <ul class="sub-menu">
+                <li><a href="{% url 'login' %}">Login</a></li>
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+            </ul>
+        </li>
+        <li>
+            <div class="header-icons">
+                <a class="shopping-cart" href="cart"><i class="fas fa-shopping-cart"></i></a>
+                <a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
+            </div>
+        </li>
+    </ul>
+</nav>
+<a class="mobile-show search-bar-icon" href="#"><i class="fas fa-search"></i></a>
+<div class="mobile-menu"></div>

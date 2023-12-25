@@ -1,0 +1,61 @@
+{% load static %}
+{% block content %}
+{% include 'header.html'%}
+    <div class="login">
+        <img src="{% static 'images/blank1.webp' %}" alt="image" class="login__bg">
+
+        <form action="" class="login__form">
+            <h1 class="login__title">Forgot Password?</h1>
+            <p class="login__paragraph">You can reset your password here.</p>
+
+            <div class="login__inputs">
+               <div class="login__box">
+                  <input type="email" id="email" placeholder="Email ID" required class="login__input">
+                  <i class="ri-mail-fill"></i>
+               </div>
+               <button type="submit" class="login__button">Reset Password</button>
+            </div>
+        </form>
+
+        <script>
+            function validateForm() {
+                var email = document.getElementById("email").value;
+
+                // Simple email validation
+                if (!/\S+@\S+\.\S+/.test(email)) {
+                    alert("Please enter a valid email address.");
+                    return false;
+                }
+
+                // Additional checks can be added as needed
+
+                return true;
+            }
+        </script>
+    </div>
+
+	<!-- jquery -->
+	<script src="{% static 'js/jquery-1.11.3.min.js' %}"></script>
+	<!-- bootstrap -->
+	<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+	<!-- count down -->
+	<script src="{% static 'js/jquery.countdown.js' %}"></script>
+	<!-- isotope -->
+	<script src="{% static 'js/jquery.isotope-3.0.6.min.js' %}"></script>
+	<!-- waypoints -->
+	<script src="{% static 'js/waypoints.js' %}"></script>
+	<!-- owl carousel -->
+	<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+	<!-- magnific popup -->
+	<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+	<!-- mean menu -->
+	<script src="{% static 'js/jquery.meanmenu.min.js' %}"></script>
+	<!-- sticker js -->
+	<script src="{% static 'js/sticker.js' %}"></script>
+	<!-- main js -->
+	<script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
+
+{% endblock %}
+{% include 'footer.html'%}
